@@ -1,12 +1,12 @@
 # Controls
 
-One Markdown file per control: `kit/controls/<control>.md`. A control is one part of the harness that regulates the agent (a hook, a linter, a review; see `CONTEXT.md`). Each file is a control handbook: it teaches what the control is, what it is good and bad at, and how to write a good one.
+One Markdown file per control: `kit/controls/<control>.md`. A control is one part of the harness that regulates the agent (an agent hook, a git hook, a linter, a review; see `CONTEXT.md`). Each file is a control handbook: it teaches what the control is, what it is good and bad at, and how to write a good one.
 
 ## Who reads it
 
 An AI working with a human on a specific cause in a specific repo. The AI reasons from the cause to a control and the human decides. The kit does not map catalogue entries or problems to controls, because a countermeasure is chosen for a specific cause and is a hypothesis until checked. A handbook is therefore written so a reader can judge whether their case fits, from general properties of the control. It is not a list of problems to look yours up in.
 
-Controls not yet covered: linter, tests, type checker and review. A handbook's `Good at` and `Bad at` are written only from research aimed at the handbook's purpose: when to use this control, across its uses. Research on one use of a control (hooks as a test gate) feeds a handbook but does not stand for the whole control.
+Controls not yet covered: linter, tests, type checker and review. A handbook's `Good at` and `Bad at` are written only from research aimed at the handbook's purpose: when to use this control, across its uses. Research on one use of a control (agent and git hooks as a test gate) feeds a handbook but does not stand for the whole control.
 
 ## Dimensions
 
@@ -19,12 +19,12 @@ Every handbook addresses the same six questions in its prose, so controls can be
 5. **What does a failure look like?** A clear signal the agent can act on, a silent miss, or a loop. What happens once it does take effect.
 6. **What does it need to exist?** A tool, a vendor feature, a test suite, a decision about what "correct" means.
 
-One control can sit in several places on these (a hook can report or block), so say where its variants sit.
+One control can sit in several places on these (an agent hook can report or block), so say where its variants sit.
 
 ## File format
 
 ```markdown
-# Hook
+# Agent hook
 
 - **What it is:** A script the agent harness runs at a fixed point, such as before a tool call or at the end of a turn.
 

@@ -21,17 +21,17 @@ A change proposed to act on an identified cause of a problem, held as a hypothes
 _Avoid_: Enforcement
 
 **Harness**:
-Everything around the model that steers and checks a coding agent: instruction files, skills, hooks, tools, tests. A system that can be improved, and the countermeasure is how.
+Everything around the model that steers and checks a coding agent: instruction files, skills, agent hooks, git hooks, tools, tests. A system that can be improved, and the countermeasure is how.
 
 **Control**:
-One part of the harness that regulates the agent, such as an AGENTS.md, a skill, a hook, a linter or a review. What a countermeasure is built from; a control is not a countermeasure until it is tied to a cause and checked. The term is Böckeler's ([Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html)).
+One part of the harness that regulates the agent, such as an AGENTS.md, a skill, an agent hook, a git hook, a linter or a review. What a countermeasure is built from; a control is not a countermeasure until it is tied to a cause and checked. The term is Böckeler's ([Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html)).
 _Avoid_: Mechanism, way, type
 
 **Guide**:
 A feedforward control: steers the agent before it acts, for example an AGENTS.md or a skill.
 
 **Sensor**:
-A feedback control: observes after the agent acts so it can self-correct, for example a linter, a test or a hook.
+A feedback control: observes after the agent acts so it can self-correct, for example a linter, a test or a git hook.
 
 **Computational control**:
 A control that is deterministic and run by the CPU: tests, linters, type checkers.
@@ -42,6 +42,14 @@ A control that uses a model to judge: AI code review, LLM as judge. Slower and n
 **Human guide**:
 Writing about how a human should think with, operate and value working with AI.
 _Avoid_: Manual, handbook
+
+**Agent hook**:
+A script the agent harness runs at a fixed point in the agent's flow, such as before a tool call or at the end of a turn. Exists only where the harness offers it and varies by harness. Can steer (guide) or observe (sensor).
+_Avoid_: Hook (ambiguous with git hook)
+
+**Git hook**:
+A script git runs at a git event, such as before a commit. Works the same for an agent and a human, but only sees git operations.
+_Avoid_: Hook (ambiguous with agent hook)
 
 **Control handbook**:
 A file in `kit/controls/` about one control: what it is, what it is good and bad at, and how it compares to other controls along shared dimensions, so a reader can reason about whether it fits a cause. Written in general terms, not as a list of problems the control solves.
