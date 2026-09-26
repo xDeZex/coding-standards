@@ -17,8 +17,27 @@ One candidate instruction in the catalogue, coming from a position.
 _Avoid_: Rule, item, standard
 
 **Countermeasure**:
-A change proposed to act on an identified cause of a problem, held as a hypothesis until its effect is checked. The term comes from lean. In coding it is often a way of making a catalogue entry take effect in a repo, such as an AGENTS.md line, a skill, an agent hook or a deterministic tool, but not always.
-_Avoid_: Control, enforcement
+A change proposed to act on an identified cause of a problem, held as a hypothesis until its effect is checked. The term comes from lean. In coding it is often a way of making a catalogue entry take effect in a repo, built from one or more controls, but not always.
+_Avoid_: Enforcement
+
+**Harness**:
+Everything around the model that steers and checks a coding agent: instruction files, skills, hooks, tools, tests. A system that can be improved, and the countermeasure is how.
+
+**Control**:
+One part of the harness that regulates the agent, such as an AGENTS.md, a skill, a hook, a linter or a review. What a countermeasure is built from; a control is not a countermeasure until it is tied to a cause and checked. The term is Böckeler's ([Harness engineering for coding agent users](https://martinfowler.com/articles/harness-engineering.html)).
+_Avoid_: Mechanism, way, type
+
+**Guide**:
+A feedforward control: steers the agent before it acts, for example an AGENTS.md or a skill.
+
+**Sensor**:
+A feedback control: observes after the agent acts so it can self-correct, for example a linter, a test or a hook.
+
+**Computational control**:
+A control that is deterministic and run by the CPU: tests, linters, type checkers.
+
+**Inferential control**:
+A control that uses a model to judge: AI code review, LLM as judge. Slower and non-deterministic.
 
 **Human guide**:
 Writing about how a human should think with, operate and value working with AI.
