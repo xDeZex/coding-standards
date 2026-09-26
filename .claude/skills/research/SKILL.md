@@ -12,5 +12,3 @@ Its job:
 3. Save it where the repo already keeps such notes; match the existing convention, and if there is none, put it somewhere sensible and say where.
 
 In this repo, write source notes and a `conclusion.md` only, never `position.md`; see `research/README.md` ("Who writes what").
-
-Read `research/leads.md` first and use matching leads to choose sources. After the research, add a lead for each new person, company or idea the sources surfaced, in the format given there; see `research/README.md` ("Leads").
