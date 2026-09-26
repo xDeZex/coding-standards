@@ -2,7 +2,7 @@
 
 One Markdown file per control: `kit/controls/<control>.md`. A control is one part of the harness that regulates the agent (a hook, a linter, a review; see `CONTEXT.md`). Each file is a guide to that control: when it suits, and how to write a good one.
 
-The kit does not map catalogue entries to controls. A countermeasure is chosen for a specific cause in a specific repo, so the adopting AI picks a control per entry from the **Use when** lines and proposes it for the human to confirm. Controls with their own kit artifact ([AGENTS.md template](../agents-md/README.md), [Skills list](../skills/README.md)) still get a file here: the guide to using them well.
+The kit does not map catalogue entries to controls. A countermeasure is chosen for a specific cause in a specific repo, so the adopting AI picks a control per entry from the **Use when** lines and proposes it for the human to confirm. Controls with their own kit artifact ([Skills list](../skills/README.md)) still get a file here: the guide to using them well.
 
 ## File format
 
