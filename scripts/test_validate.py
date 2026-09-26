@@ -34,6 +34,14 @@ GOOD = {
     "guide/guide.md": "See [the position](../research/testing/position.md#tests-first).\n",
 }
 
+CONTROL = """# Hook
+
+- **What it is:** A script run at a fixed point.
+- **Use when:** the error is mechanical.
+
+Prose.
+"""
+
 
 class ValidateTest(unittest.TestCase):
     def errors(self, **changes):
@@ -91,6 +99,14 @@ class ValidateTest(unittest.TestCase):
     def test_unexpected_file_in_topic(self):
         errors, _ = self.errors(**{"research/testing/notes.md": "x"})
         self.assertTrue(any("unexpected" in e for e in errors))
+
+    def test_control_passes(self):
+        errors, _ = self.errors(**{"kit/controls/hook.md": CONTROL})
+        self.assertEqual(errors, [])
+
+    def test_control_missing_use_when(self):
+        errors, _ = self.errors(**{"kit/controls/hook.md": CONTROL.replace("- **Use when:** the error is mechanical.\n", "")})
+        self.assertTrue(any("hook.md" in e and "Use when" in e for e in errors))
 
 
 if __name__ == "__main__":

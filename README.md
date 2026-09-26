@@ -4,7 +4,7 @@ A thinking space where a human and an AI research, discuss and document coding s
 
 ## Layout
 
-- `kit/<type>/`: the portable kit, one folder per artifact type (`catalogue`, `agents-md`, `skills`; the set may change with the Countermeasures ticket).
+- `kit/<type>/`: the portable kit, one folder per artifact type (`catalogue`, `agents-md`, `skills`, `controls`; the set may change as research surfaces new types).
 - `guide/`: the human guide.
 - `research/<topic>/`: `conclusion.md` and `position.md` plus `sources/<source>.md`, one file per source.
 - `docs/`: operating this repo (`agents/`, `adr/`).

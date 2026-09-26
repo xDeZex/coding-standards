@@ -17,6 +17,8 @@ DATE = re.compile(r"^\d{4}(-\d{2}(-\d{2})?)?$")
 LINK = re.compile(r"(?<!!)\[[^\]]*\]\(([^)\s]+)\)")
 ENTRY_FIELD = re.compile(r"^- \*\*(.+?):\*\* (.+)$")
 REQUIRED_FIELDS = {"Rationale", "Applies when", "Position"}
+CONTROL_FIELD = ENTRY_FIELD
+CONTROL_FIELDS = {"What it is", "Use when"}
 
 
 def rel(root, path):
@@ -176,6 +178,25 @@ def check_catalogue(root, errors):
         check_links(root, path, errors)
 
 
+def check_controls(root, errors):
+    base = root / "kit" / "controls"
+    if not base.is_dir():
+        return
+    for path in sorted(base.glob("*.md")):
+        if path.name in ("README.md", "CLAUDE.md"):
+            continue
+        name = rel(root, path)
+        if not SLUG.match(path.stem):
+            errors.append(f"{name}: filename must be a lowercase-hyphen slug")
+        text = path.read_text()
+        if not re.match(r"# .+", text):
+            errors.append(f"{name}: must start with an '# <Control>' title")
+        fields = {m.group(1) for l in text.split("\n") if (m := CONTROL_FIELD.match(l))}
+        for missing in sorted(CONTROL_FIELDS - fields):
+            errors.append(f"{name}: missing '**{missing}:**' line")
+        check_links(root, path, errors)
+
+
 def check_guide(root, errors):
     for path in sorted((root / "guide").glob("*.md")) if (root / "guide").is_dir() else []:
         if path.name != "CLAUDE.md":
@@ -186,6 +207,7 @@ def validate(root):
     errors, warnings = [], []
     check_research(root, errors, warnings)
     check_catalogue(root, errors)
+    check_controls(root, errors)
     check_guide(root, errors)
     return errors, warnings
 
