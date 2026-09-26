@@ -8,6 +8,10 @@ research/<topic>/position.md
 research/<topic>/sources/<source>.md
 ```
 
+## Purpose
+
+Research is done to create something for the kit: a catalogue entry, a control handbook, a Skills list entry or the human guide. Before starting, name what the research will feed and phrase the question so its answer is usable there. A vague topic gives findings nobody can act on. The goal shapes the question and the choice of sources; the conclusion still reports findings only (see Conclusion below). A topic can be researched again with a better-phrased question.
+
 ## Leads
 
 `research/leads.md` lists people, companies, ideas and other things worth a look. It guides where research looks and is something humans can browse. A lead is a pointer: rely on a claim only through a source note. Format is in the file.
