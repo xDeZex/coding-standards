@@ -17,7 +17,7 @@ One candidate instruction in the catalogue, coming from a position.
 _Avoid_: Rule, item, standard
 
 **Countermeasure**:
-A way of making a catalogue entry take effect in a repo, such as an AGENTS.md line, a skill, an agent hook or a deterministic tool. The term comes from lean.
+A change proposed to act on an identified cause of a problem, held as a hypothesis until its effect is checked. The term comes from lean. In coding it is often a way of making a catalogue entry take effect in a repo, such as an AGENTS.md line, a skill, an agent hook or a deterministic tool, but not always.
 _Avoid_: Control, enforcement
 
 **Human guide**:
