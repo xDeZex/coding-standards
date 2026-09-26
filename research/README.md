@@ -3,9 +3,18 @@
 Working material, not carried into target repos. It exists for human and AI understanding, and as the basis for producing catalogue entries. Catalogue entries are what get copied into a repo during adoption.
 
 ```
+research/<topic>/conclusion.md
 research/<topic>/position.md
 research/<topic>/sources/<source>.md
 ```
+
+## Who writes what
+
+A research agent writes source notes and one `conclusion.md`, never the position. The conclusion is its synthesis of the sources, with unverified claims flagged, for the human to read and discuss (including how it connects to AI coding). The position is the human's, written after that discussion, and it is the only file catalogue entries point to. The conclusion may be deleted once the position exists.
+
+## Conclusion
+
+Exactly one per topic, free prose, no front matter. Findings only: what the sources say, how well they support it, what is unverified. No kit design, no catalogue entries, no recommendations for us.
 
 ## Source note
 
@@ -27,7 +36,7 @@ researched: 2026-09-26
 
 ## Position
 
-Exactly one per topic. Free prose: our conclusion, its trade-offs, when it does not hold. No front matter and no required sections. It rests by default on the source notes in the same topic folder; a specific claim that comes from one source links to that source note in the prose. Source links are not machine checked.
+Exactly one per topic, written with the human. Free prose: our stance, its trade-offs, when it does not hold. No front matter and no required sections. It rests by default on the source notes in the same topic folder; a specific claim that comes from one source links to that source note in the prose. Source links are not machine checked.
 
 Give each conclusion that yields a catalogue entry its own heading, so the entry's `position` pointer can anchor to it.
 

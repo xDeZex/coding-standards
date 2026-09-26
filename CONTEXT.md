@@ -32,8 +32,12 @@ _Avoid_: Skill library
 A cited record of what a source (book, paper, talk, post) says, kept separate from our opinion of it.
 _Avoid_: Research note, summary
 
+**Conclusion**:
+A research agent's synthesis of the source notes for a topic, written for the human to read and discuss. Not our opinion; it becomes a position only after the human has discussed it and written the position.
+_Avoid_: Summary, findings
+
 **Position**:
-Our conclusion on a topic, with its trade-offs, linking to the source notes it rests on.
+Our stance on a topic, written by the human after discussing the conclusion, with its trade-offs, linking to the source notes it rests on.
 _Avoid_: Verdict, opinion
 
 **Source**:

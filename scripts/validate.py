@@ -107,11 +107,12 @@ def check_research(root, errors, warnings):
         position = topic / "position.md"
         if not position.is_file():
             warnings.append(f"{rel(root, topic)}: no position.md yet")
-        else:
-            check_links(root, position, errors)
+        for doc in (topic / "conclusion.md", position):
+            if doc.is_file():
+                check_links(root, doc, errors)
         for item in sorted(topic.iterdir()):
-            if item.name not in ("position.md", "sources") and item.name != "CLAUDE.md":
-                errors.append(f"{rel(root, item)}: unexpected; a topic holds only position.md and sources/")
+            if item.name not in ("conclusion.md", "position.md", "sources") and item.name != "CLAUDE.md":
+                errors.append(f"{rel(root, item)}: unexpected; a topic holds only conclusion.md, position.md and sources/")
         sources = topic / "sources"
         if not sources.is_dir():
             warnings.append(f"{rel(root, topic)}: no sources/ folder")

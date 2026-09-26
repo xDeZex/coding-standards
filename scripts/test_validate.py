@@ -45,6 +45,10 @@ class ValidateTest(unittest.TestCase):
         errors, warnings = self.errors()
         self.assertEqual((errors, warnings), ([], []))
 
+    def test_conclusion_links_are_checked(self):
+        errors, _ = self.errors(**{"research/testing/conclusion.md": "See [x](sources/missing.md).\n"})
+        self.assertTrue(any("conclusion.md" in e and "missing" in e for e in errors))
+
     def test_missing_position_is_a_warning(self):
         errors, warnings = self.errors(**{"research/testing/position.md": None, "kit/catalogue/testing.md": None, "guide/guide.md": None})
         self.assertEqual(errors, [])
