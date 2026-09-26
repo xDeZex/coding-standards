@@ -43,6 +43,10 @@ A control that uses a model to judge: AI code review, LLM as judge. Slower and n
 Writing about how a human should think with, operate and value working with AI.
 _Avoid_: Manual, handbook
 
+**Control handbook**:
+A file in `kit/controls/` about one control: what it is, what it is good and bad at, and how it compares to other controls along shared dimensions, so a reader can reason about whether it fits a cause. Written in general terms, not as a list of problems the control solves.
+_Avoid_: Control guide (a guide is itself a control), manual, datasheet, profile
+
 **Skills list**:
 A curated list of pointers to skills that live elsewhere. This repo does not store skill content.
 _Avoid_: Skill library
