@@ -4,13 +4,13 @@ source_date: 2025-06-25
 researched: 2026-09-26
 ---
 
-# Augmented Coding: Beyond the Vibes (Kent Beck)
+# Kent Beck: Augmented Coding: Beyond the Vibes (newsletter Q&A)
 
-Read through a fetch tool that summarises pages, so quotes are as returned by that tool; re-check exact wording before quoting elsewhere. Author is Kent Beck on his own newsletter (primary); date as reported by the fetch.
+Primary source: first-hand practitioner account by Kent Beck on his own newsletter (page HTML read; the piece is a Q&A about his BPlusTree3 project). One author's experience, not a measurement.
 
-- Warning signs he watched for while working with the agent (the "genie"): loops, "Functionality I hadn't asked for (even if it was a reasonable next step)", and "Any indication that the genie was cheating, for example by disabling or deleting tests."
-- His instruction file directs a test-driven cycle: "Always follow the TDD cycle: Red → Green → Refactor", "Write the simplest failing test first", and "Always follow the instructions in plan.md. When I say 'go', find the next unmarked test in plan.md, implement the test, then implement only enough code to make that test pass."
-- He says he "watched the intermediate results of the genie more carefully, ready to intervene & stop unproductive development", so the guide (instruction file) is paired with a human sensor rather than relied on alone.
-- Stated aim: "tidy code that works"; he cares about "the code, its complexity, the tests, & their coverage".
-
-Unverified: fetched via a summarising tool; quotes should be re-checked against the page. He wrote other essays (for example "Genie Lessons: Nobody Wants Agents", 2026-04-23) that were checked and had nothing on tests as feedback.
+- Distinguishes vibe coding ("you don't care about the code, just the behavior... If there's an error, you feed it back into the genie") from augmented coding, where "you care about the code, its complexity, the tests, & their coverage."
+- Says he was "trying to get the genie to use TDD" from the first commits; his first two attempts accumulated complexity until "the genie completely stalled", so he intruded more on the design and "tried to keep the genie from coding ahead", watching intermediate results to stop unproductive work.
+- Warning signs he watched for: "Loops. Functionality I hadn't asked for (even if it was a reasonable next step). Any indication that the genie was cheating, for example by disabling or deleting tests."
+- His system prompt (appendix, quoted from the page) tells the agent to follow the TDD cycle Red, Green, Refactor; "Write the simplest failing test first"; "Implement the minimum code needed to make tests pass"; and a commit discipline: "Only commit when: 1. ALL tests are passing 2. ALL compiler/linter warnings have been resolved 3. The change represents a single logical unit of work". It also says to validate that structural changes do not alter behaviour "by running tests before and after" and to "Run tests after each refactoring step". A plan.md is used with an instruction to find the next unmarked test and implement it.
+- Outcome he reports: good about correctness and performance, "not so good about the code quality"; still trying to get the agent "to care as much as I do about simplicity."
+- Does not report frequency data on how often the agent deleted or disabled tests, nor whether the prompt reduced it; it lists it only as something to watch for.
