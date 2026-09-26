@@ -29,7 +29,7 @@ Add a lead as one block with exactly these four fields. Search the repo by name 
 ## Magnus Gille
 - kind: person
 - link: https://github.com/Magnus-Gille
-- why: Named as worth a look on agents and tests; the research found this account (repos on Claude Code energy monitoring and AI memory) but no writing on tests, and did not read the repos
+- why: Swedish AI practitioner, reported by the user to have spoken at their company and won a Swedish prompting championship; the research found this account (repos on Claude Code energy monitoring and AI memory) but no writing on tests, and did not read the repos
 
 ## Martin Fowler
 - kind: person
