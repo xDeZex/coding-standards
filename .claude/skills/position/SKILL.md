@@ -16,7 +16,7 @@ Read the conclusion and its source notes yourself, then ask for the user's own o
 
 ## 3. Grill
 
-Call the Skill tool for `grill-with-docs`. Grill their opinion against the conclusion and source notes: where it agrees, disagrees or goes beyond them, what is unverified, and how it applies to AI coding, tactical and strategic. Done when every branch of their opinion has been visited and they confirm shared understanding.
+Call the Skill tool twice, for `grilling` and `domain-modeling`; `grill-with-docs` cannot be called by you. Grill their opinion against the conclusion and source notes: where it agrees, disagrees or goes beyond them, what is unverified, and how it applies to AI coding, tactical and strategic. Done when every branch of their opinion has been visited and they confirm shared understanding.
 
 ## 4. Write the position
 
