@@ -16,3 +16,6 @@ Read through a fetch tool that summarises pages, so quotes are as returned by th
 - Language-specific tooling appears in the article; only the general pattern (checks gated at commit, failure returned to the agent) is recorded here.
 
 Unverified: authorship; a related Ralph-loop article by the same site was checked only in summary (its script tells the agent to run tests and type checks then commit) and is not recorded as its own note.
+
+
+Correction 2026-09-26: the raw page, read in full in [pocock-feedback-loops-husky-pre-commit](../../git-hooks/sources/pocock-feedback-loops-husky-pre-commit.md), carries the byline Matt Pocock (authorship confirmed) and its quotes match this note's. The Ralph-loop article was also read raw: [pocock-ralph-tips-pre-commit-hooks-block-commits](../../git-hooks/sources/pocock-ralph-tips-pre-commit-hooks-block-commits.md).

@@ -14,3 +14,6 @@ Primary source: practitioner article on the author's own site (byline Matt Pococ
 - Rationale: "AI agents don't get frustrated by repetition. When code fails type checking or tests, the agent simply tries again. This makes feedback loops (and pre-commit hooks, especially) incredibly powerful for AI-driven development."
 - No data on how often agents run tests unprompted, or on test tampering. Mentions letting the model access the running dev server as another loop.
 - Other Pocock material (a skills repository with a test-driven-development skill) surfaced in search but was not read.
+
+
+Re-checked 2026-09-26: the raw page was read in full in [pocock-feedback-loops-husky-pre-commit](../../git-hooks/sources/pocock-feedback-loops-husky-pre-commit.md); the quotes above match it and the byline Matt Pocock is on the page.

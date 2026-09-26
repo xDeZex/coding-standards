@@ -390,3 +390,93 @@ Add a lead as one block with exactly these four fields. Search the repo by name 
 - kind: other
 - link: https://docs.github.com/en/copilot/concepts/coding-agent/about-copilot-coding-agent
 - why: The pages read showed no git-hook statement; another source is needed on whether these agents run git hooks on their commits
+
+## Boris Cherny
+- kind: person
+- link: https://x.com/bcherny
+- why: Claude Code creator at Anthropic; posts sustained first-hand usage threads that mention hooks for formatting, verification and permissions
+
+## Armin Ronacher
+- kind: person
+- link: https://lucumr.pocoo.org
+- why: Flask creator with a long-running agentic-coding blog; the one clear negative account of agent hooks (July 2025); later posts not checked
+
+## Shrivu Shankar
+- kind: person
+- link: https://blog.sshh.io
+- why: Widely cited Claude Code write-up on an enterprise repo, including block-at-commit hooks
+
+## Dex Horthy / HumanLayer
+- kind: person
+- link: https://www.humanlayer.dev/blog
+- why: Authors of 12-factor agents and the skill-issue harness post on hooks and back-pressure; talk not read
+
+## Jesse Vincent
+- kind: person
+- link: https://github.com/obra/superpowers
+- why: Author of Superpowers; uses a session-start hook and notes worktrees silently lose git hooks; his blog was not reachable
+
+## Geoffrey Huntley
+- kind: person
+- link: https://ghuntley.com
+- why: Creator of the Ralph loop; lists pre-commit analyzers as one back-pressure layer; his back-pressure post is paywalled
+
+## Peter Steinberger
+- kind: person
+- link: https://steipete.me
+- why: Long first-hand accounts of running many agents in parallel; one remark that no hook stops a determined agent; other posts unread
+
+## Steve Kinney
+- kind: person
+- link: https://stevekinney.com/courses/self-testing-ai-agents/git-hooks-with-lefthook
+- why: Workshop on agents with pre-commit and pre-push hooks; gives speed rules; weaker trust, other lessons unread
+
+## Ryan Carson
+- kind: person
+- link: https://x.com/ryancarson/status/1948869082511802648
+- why: Tip on running an agent review inside a pre-commit hook; weakest trust of the practitioners read
+
+## Viv Trivedy
+- kind: person
+- link: https://addyosmani.com
+- why: Credited by Osmani with coining harness engineering and the Anatomy of an Agent Harness post; not read
+
+## Harness Engineering is not Enough (Dex Horthy)
+- kind: talk
+- link: https://daily.dev/posts/harness-engineering-is-not-enough-why-software-factories-fail-dex-horthy-humanlayer-04e6rdy4v
+- why: Horthy's talk on the limits of harness controls; not read
+
+## Hook incidents drive hook design
+- kind: idea
+- link: https://blakecrosley.com/blog/claude-code-hooks
+- why: Recurring practitioner claim that each hook should come from a real failure; this source is an independent developer, weak trust
+
+## Deterministic tool gate RFC
+- kind: idea
+- link: https://github.com/anthropics/claude-code/issues/45427
+- why: Argues hooks are necessary but insufficient for governance; not read
+
+## Ralph Wiggum loop
+- kind: idea
+- link: https://ghuntley.com/loop/
+- why: The Stop-hook continuation pattern that Cherny and Osmani both cite; not read closely
+
+## Stripe Minions Part 2
+- kind: other
+- link: https://stripe.dev/blog/minions-stripes-one-shot-end-to-end-coding-agents-part-2
+- why: Holds the pre-push hook and CI-round passage; the author is unconfirmed
+
+## Huntley, don't waste your back pressure
+- kind: other
+- link: https://ghuntley.com/pressure/
+- why: Paywalled; may name pre-commit hooks as back pressure
+
+## Forcing Claude Code to reliably pass lint with Lefthook
+- kind: other
+- link: https://liambx.com/blog/ai-agent-lint-enforcement-lefthook-claude-code
+- why: First-hand practice post on lint enforcement with a git hook; author trust unchecked
+
+## Böckeler sensors article, remaining sections
+- kind: other
+- link: https://martinfowler.com/articles/sensors-for-coding-agents.html
+- why: Hook passages were read closely, the rest skimmed

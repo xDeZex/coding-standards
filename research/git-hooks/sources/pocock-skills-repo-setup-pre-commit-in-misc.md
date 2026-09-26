@@ -1,0 +1,15 @@
+---
+source: https://github.com/mattpocock/skills/tree/main/skills/misc
+source_date: 2026-08-19
+researched: 2026-09-26
+---
+
+# Matt Pocock's skills repo: the setup-pre-commit skill, its placement, and the retro skill
+
+Read as raw files from raw.githubusercontent.com (the repo file tree via the GitHub API, then `skills/misc/README.md`, `skills/misc/setup-pre-commit/SKILL.md`, `skills/misc/git-guardrails-claude-code/SKILL.md`, `skills/in-progress/retro/SKILL.md` and `.changeset/retro-deterministic-checks.md`). Date is the last commit touching `setup-pre-commit/SKILL.md` (2026-08-19, an em-dash cleanup); the skill itself is older. Speaker and why trusted: see [pocock-feedback-loops-husky-pre-commit](pocock-feedback-loops-husky-pre-commit.md). A repo file is what he ships, not an essay, so it shows practice rather than explained opinion.
+
+- Placement matters. `skills/misc/README.md` opens: "Tools I keep around but rarely use, not promoted in the plugin." It lists `setup-pre-commit` ("Set up Husky pre-commit hooks with lint-staged, Prettier, type checking, and tests") and `git-guardrails-claude-code` in that folder. His daily-use skills sit in `skills/engineering/` ("Skills I use daily for code work"). So the skill exists, but he classes it as rarely used, at least as of the last edit; whether that changed how he works is not stated.
+- `setup-pre-commit` installs Husky, lint-staged and Prettier, and writes `.husky/pre-commit` as `npx lint-staged`, `npm run typecheck`, `npm run test`. Its notes say: "The pre-commit runs lint-staged first (fast, staged-only), then full typecheck and tests". Omit typecheck or test lines if the repo has no such scripts. Step 8 commits the setup so "This will run through the new pre-commit hooks: a good smoke test".
+- `git-guardrails-claude-code` is not a git hook. It sets up a Claude Code PreToolUse (agent) hook that blocks `git push` (all variants), `git reset --hard`, `git clean -f`, `git branch -D`, `git checkout .` and `git restore .`, telling the agent "it does not have authority to access these commands". So for blocking dangerous git commands he uses an agent hook, and for the quality gate a git hook.
+- The in-progress `retro` skill (a review of an agent session) tells the agent to check whether "automated checks ... could catch errors the agent made". It says "A repo with no guardrail (no pre-commit hook and no CI job running its lint/typecheck/test command) is itself a finding". For a mechanical violation (fixed pattern, banned API, import shape, file location) it says the fix is "a custom rule in the repo's own linter, a new pre-commit hook, or a new CI job, whichever the repo's language and existing guardrail make cheapest. Default to building the check over writing the rule." Judgement calls go in a standards file instead. So here a pre-commit hook and a CI job are named as interchangeable places for a deterministic check, and instructions are for what cannot be mechanised.
+- Not in the repo as read: any note on `--no-verify`, worktrees, or a hook that agents skip.
