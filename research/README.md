@@ -12,6 +12,12 @@ research/<topic>/sources/<source>.md
 
 Research is done to create something for the kit: a catalogue entry, a control handbook, a Skills list entry or the human guide. Before starting, name what the research will feed and phrase the question so its answer is usable there. A vague topic gives findings nobody can act on. The goal shapes the question and the choice of sources; the conclusion still reports findings only (see Conclusion below). A topic can be researched again with a better-phrased question.
 
+A good question covers the whole subject, not one use of it; asks what it is good and bad at; and asks what someone should weigh when deciding whether to use it. "How does X work" produces documentation, not something the kit can use.
+
+## Splitting the work
+
+Split a topic across many agents so none needs a large context window. Give each agent one slice, for example one harness, one source family or one sub-question, and have it write its source notes. Then have a separate agent read the notes, not the pages, and write the conclusion. Slices should not need each other's context, and each agent gets the reading rules below.
+
 ## Leads
 
 `research/leads.md` lists people, companies, ideas and other things worth a look. It guides where research looks and is something humans can browse. A lead is a pointer: rely on a claim only through a source note. Format is in the file.
