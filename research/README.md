@@ -46,4 +46,6 @@ python3 -m venv .venv && .venv/bin/pip install -r requirements.txt   # once
 .venv/bin/python scripts/validate.py
 ```
 
+A git pre-commit hook runs the validator before every commit. Enable it once per clone: `git config core.hooksPath .githooks`.
+
 Its own tests: `cd scripts && ../.venv/bin/python -m unittest`.
