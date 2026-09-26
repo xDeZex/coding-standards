@@ -8,6 +8,10 @@ research/<topic>/position.md
 research/<topic>/sources/<source>.md
 ```
 
+## Leads
+
+`research/leads.md` lists people, companies, ideas and other things worth a look. It guides where research looks and is something humans can browse. A research agent reads it before choosing sources and may add leads it comes across. A lead is a pointer: rely on a claim only through a source note. Format is in the file.
+
 ## Who writes what
 
 A research agent writes source notes and one `conclusion.md`, never the position. The conclusion is its synthesis of the sources, with unverified claims flagged, for the human to read and discuss (including how it connects to AI coding). The position is the human's, written after that discussion, and it is the only file catalogue entries point to. The conclusion is kept after the position exists, as the record of what the research found; never delete it.

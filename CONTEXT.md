@@ -51,6 +51,10 @@ _Avoid_: Skill library
 A cited record of what a source (book, paper, talk, post) says, kept separate from our opinion of it.
 _Avoid_: Research note, summary
 
+**Lead**:
+A pointer to a person, company, idea, book or talk worth a look, kept in `research/leads.md` to guide research and to give humans somewhere to look next. Records no claims.
+_Avoid_: Reference, recommendation
+
 **Conclusion**:
 A research agent's synthesis of the source notes for a topic, written for the human to read and discuss. Not our opinion; it becomes a position only after the human has discussed it and written the position.
 _Avoid_: Summary, findings
