@@ -6,7 +6,7 @@ One Markdown file per control: `kit/controls/<control>.md`. A control is one par
 
 An AI working with a human on a specific cause in a specific repo. The AI reasons from the cause to a control and the human decides. The kit does not map catalogue entries or problems to controls, because a countermeasure is chosen for a specific cause and is a hypothesis until checked. A handbook is therefore written so a reader can judge whether their case fits, from general properties of the control. It is not a list of problems to look yours up in.
 
-Controls not yet covered: linter, tests, type checker and review. A control gets a handbook once a position stands behind it.
+Controls not yet covered: linter, tests, type checker and review. A handbook's `Good at` and `Bad at` are written only from research aimed at the handbook's purpose: when to use this control, across its uses. Research on one use of a control (hooks as a test gate) feeds a handbook but does not stand for the whole control.
 
 ## Dimensions
 

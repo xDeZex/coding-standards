@@ -2,7 +2,7 @@
 
 - **What it is:** A folder with a `SKILL.md` that the agent loads on demand: a description always in context, and a body read only when the skill fires. The kit lists skills worth using in the [Skills list](../skills/README.md).
 
-_Waiting for a position before Good at and Bad at are written._
+_Waiting for research aimed at when to use a skill._
 
 ## Good at
 

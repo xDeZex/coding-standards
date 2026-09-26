@@ -2,7 +2,7 @@
 
 - **What it is:** A Markdown file in the repo that the agent reads at the start of a session, holding instructions for working in that repo.
 
-_Waiting for a position on `research/agents-md-content` before Good at and Bad at are written. The kit has no AGENTS.md template: the file is easy to create and other tools already generate it._
+_Waiting for research aimed at when to use AGENTS.md. `research/agents-md-content` covers what to put in the file and can feed the handbook, but not when to choose it. The kit has no AGENTS.md template: the file is easy to create and other tools already generate it._
 
 ## Good at
 
