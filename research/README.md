@@ -10,7 +10,9 @@ research/<topic>/sources/<source>.md
 
 ## Leads
 
-`research/leads.md` lists people, companies, ideas and other things worth a look. It guides where research looks and is something humans can browse. A research agent reads it before choosing sources and may add leads it comes across. A lead is a pointer: rely on a claim only through a source note. Format is in the file.
+`research/leads.md` lists people, companies, ideas and other things worth a look. It guides where research looks and is something humans can browse. A lead is a pointer: rely on a claim only through a source note. Format is in the file.
+
+A research agent reads it before choosing sources. After the research, and before finishing, it adds a lead for each new person, company, idea, book or talk that the sources surfaced and that looks worth a look, including ones it did not have time to follow. It skips anything already in the file (search by name) and never edits or removes existing leads.
 
 ## Who writes what
 
