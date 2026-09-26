@@ -1,9 +1,14 @@
 # AGENTS.md
 
 - **What it is:** A Markdown file in the repo that the agent reads at the start of a session, holding instructions for working in that repo.
-- **Use when:** the agent needs standing context or constraints it cannot infer from the code, and a reminder before it acts is enough.
 
-_Stub from the template decision. The kit has no AGENTS.md template: the file is easy to create and other tools already generate it. This guide covers how to write a good one; content comes from a later map._
+_Waiting for a position on `research/agents-md-content` before Good at and Bad at are written. The kit has no AGENTS.md template: the file is easy to create and other tools already generate it._
+
+## Good at
+
+## Bad at
+
+## How to write a good one
 
 Decided points:
 

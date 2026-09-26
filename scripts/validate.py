@@ -18,7 +18,9 @@ LINK = re.compile(r"(?<!!)\[[^\]]*\]\(([^)\s]+)\)")
 ENTRY_FIELD = re.compile(r"^- \*\*(.+?):\*\* (.+)$")
 REQUIRED_FIELDS = {"Rationale", "Applies when", "Position"}
 CONTROL_FIELD = ENTRY_FIELD
-CONTROL_FIELDS = {"What it is", "Use when"}
+CONTROL_FIELDS = {"What it is"}
+CONTROL_HEADINGS = ("Good at", "Bad at", "How to write a good one")
+POSITION_LINK = re.compile(r"\]\([^)\s]*position\.md[^)]*\)")
 SKILL_FIELDS = {"Where", "Why", "Use when"}
 LEAD_FIELD = re.compile(r"^- (\w+): (.*)$")
 LEAD_FIELDS = ("kind", "link", "why")
@@ -182,7 +184,7 @@ def check_catalogue(root, errors):
         check_links(root, path, errors)
 
 
-def check_controls(root, errors):
+def check_controls(root, errors, warnings):
     base = root / "kit" / "controls"
     if not base.is_dir():
         return
@@ -198,6 +200,12 @@ def check_controls(root, errors):
         fields = {m.group(1) for l in text.split("\n") if (m := CONTROL_FIELD.match(l))}
         for missing in sorted(CONTROL_FIELDS - fields):
             errors.append(f"{name}: missing '**{missing}:**' line")
+        headings = {m.group(1).strip() for m in re.finditer(r"^## (.+)$", strip_code(text), re.M)}
+        for heading in CONTROL_HEADINGS:
+            if heading not in headings:
+                errors.append(f"{name}: missing '## {heading}' heading")
+        if not POSITION_LINK.search(text):
+            warnings.append(f"{name}: no link to a position.md yet")
         check_links(root, path, errors)
 
 
@@ -272,7 +280,7 @@ def validate(root):
     check_research(root, errors, warnings)
     check_leads(root, errors)
     check_catalogue(root, errors)
-    check_controls(root, errors)
+    check_controls(root, errors, warnings)
     check_skills(root, errors)
     check_guide(root, errors)
     return errors, warnings

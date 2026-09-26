@@ -20,7 +20,7 @@ Start with "adopt the kit from https://github.com/xDeZex/coding-standards".
 1. **Orient:** read `CONTEXT.md` for the vocabulary.
 2. **Inspect the target repo:** record its languages, tests and CI, and which controls from `kit/controls/` it already has.
 3. **Guide the human:** do the shared step below.
-4. **Propose controls (list 1):** judge every control in `kit/controls/` by its `Use when` against the target. List the controls the harness should have, each marked already present or to add, with a line on why. Done when the human has confirmed the set.
+4. **Propose controls (list 1):** read the handbook for every control in `kit/controls/` and reason about which suit the target. List the controls the harness should have, each marked already present or to add, with a line on why. Done when the human has confirmed the set.
 5. **Propose entries (list 2):** judge every entry in `kit/catalogue/` by its `Applies when`. List each entry that fits, mapped to a confirmed control. Judge every skill in `kit/skills/skills.md` by its `Use when` and list the fits separately. Flag an entry that fits no confirmed control as "no fit": the human adds a control (back to list 1) or drops it. Done when the human has confirmed the list.
 6. **Choose how to implement** and **Do it:** the shared steps below.
 
@@ -30,7 +30,7 @@ Start with "use https://github.com/xDeZex/coding-standards to solve <problem>". 
 
 1. **Orient:** read `CONTEXT.md` for the vocabulary.
 2. **Guide the human:** do the shared step below.
-3. **Propose countermeasures:** search `kit/catalogue/` and `kit/skills/skills.md` for what bears on the cause. Propose countermeasures aimed at the cause, each built from a control in `kit/controls/`, with a line on why that control suits, its expected effect and how to check it. When nothing in the kit bears on the cause, propose your own from a control and say it is not from the catalogue. Done when the human has confirmed the list.
+3. **Propose countermeasures:** search `kit/catalogue/` and `kit/skills/skills.md` for what bears on the cause. Propose countermeasures aimed at the cause, each built from a control in `kit/controls/` (reason from the cause using its handbook), with a line on why that control suits, its expected effect and how to check it. When nothing in the kit bears on the cause, propose your own from a control and say it is not from the catalogue. Done when the human has confirmed the list.
 4. **Choose how to implement** and **Do it:** the shared steps below.
 
 ### Shared steps

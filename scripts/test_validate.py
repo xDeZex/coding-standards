@@ -37,9 +37,16 @@ GOOD = {
 CONTROL = """# Hook
 
 - **What it is:** A script run at a fixed point.
-- **Use when:** the error is mechanical.
+
+## Good at
 
 Prose.
+
+## Bad at
+
+Prose.
+
+## How to write a good one
 """
 
 
@@ -104,9 +111,23 @@ class ValidateTest(unittest.TestCase):
         errors, _ = self.errors(**{"kit/controls/hook.md": CONTROL})
         self.assertEqual(errors, [])
 
-    def test_control_missing_use_when(self):
-        errors, _ = self.errors(**{"kit/controls/hook.md": CONTROL.replace("- **Use when:** the error is mechanical.\n", "")})
-        self.assertTrue(any("hook.md" in e and "Use when" in e for e in errors))
+    def test_control_missing_what_it_is(self):
+        errors, _ = self.errors(**{"kit/controls/hook.md": CONTROL.replace("- **What it is:** A script run at a fixed point.\n", "")})
+        self.assertTrue(any("hook.md" in e and "What it is" in e for e in errors))
+
+    def test_control_missing_heading(self):
+        errors, _ = self.errors(**{"kit/controls/hook.md": CONTROL.replace("## Bad at\n\nProse.\n\n", "")})
+        self.assertTrue(any("hook.md" in e and "Bad at" in e for e in errors))
+
+    def test_control_without_position_link_warns(self):
+        errors, warnings = self.errors(**{"kit/controls/hook.md": CONTROL})
+        self.assertEqual(errors, [])
+        self.assertTrue(any("hook.md" in w and "position.md" in w for w in warnings))
+
+    def test_control_with_position_link_does_not_warn(self):
+        text = CONTROL + "\nSee [Tests first](../../research/testing/position.md#tests-first).\n"
+        errors, warnings = self.errors(**{"kit/controls/hook.md": text})
+        self.assertEqual((errors, warnings), ([], []))
 
     def test_leads_pass(self):
         lead = "# Leads\n\n## Ada\n- kind: person\n- link: https://example.com\n- why: worth a look\n"

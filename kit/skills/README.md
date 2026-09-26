@@ -2,7 +2,7 @@
 
 Pointers to skills that live elsewhere. No skill content is stored here.
 
-One Markdown file: `kit/skills/skills.md`, one `##` entry per skill. The guide to writing a skill is a control, [`kit/controls/skill.md`](../controls/README.md), and may link here.
+One Markdown file: `kit/skills/skills.md`, one `##` entry per skill. The handbook for the skill control is [`kit/controls/skill.md`](../controls/skill.md), and may link here.
 
 ## Entry format
 
@@ -18,7 +18,7 @@ One Markdown file: `kit/skills/skills.md`, one `##` entry per skill. The guide t
 
 - The `##` heading is the id: a lowercase-hyphen slug, unique in the file, never renamed.
 - All three lines are required and checked. `Where` is a Markdown link to where the skill lives (a relative link for a skill in this repo, a URL otherwise). `Why` is why it is recommended. `Use when` is loose free text the AI judges against a target repo.
-- Catalogue entries do not name skills, and skills do not name entries. At adoption the AI proposes skills from the `Use when` lines and the human confirms, as for controls.
+- Catalogue entries do not name skills, and skills do not name entries. At adoption the AI proposes skills from the `Use when` lines and the human confirms.
 - To retire a skill, delete its entry.
 
 Run the validator after editing: `.venv/bin/python scripts/validate.py`.
