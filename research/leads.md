@@ -95,3 +95,23 @@ Add a lead as one block with exactly these four fields. Search the repo by name 
 - kind: idea
 - link: https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html
 - why: The post's body did not load, so its flakiness statistics are not recorded; worth reading for how flaky tests weaken a red run as a signal
+
+## Writing-Zero
+- kind: idea
+- link: https://arxiv.org/abs/2506.00103
+- why: RL for creative writing with a generative reward model and claimed resistance to reward hacking; seen only as an abstract summary
+
+## LongWriter
+- kind: idea
+- link: https://arxiv.org/abs/2408.07055
+- why: SFT data and an agent pipeline for very long outputs, with the LongBench-Write benchmark; seen only as an abstract summary
+
+## Limits of automatic evaluation of creativity
+- kind: idea
+- link: https://arxiv.org/abs/2608.23705
+- why: 2026 paper on the limits of automatic creativity evaluation; the PDF could not be parsed and it was not read
+
+## Excess vocabulary in LLM-assisted writing
+- kind: idea
+- link: https://arxiv.org/abs/2406.07016
+- why: Excess-vocabulary study of LLM use in biomedical writing, and related work on whether banned words fade after publicity; seen only in search results
