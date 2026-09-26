@@ -47,3 +47,11 @@ _Avoid_: Installation, sync
 **Blueprint**:
 The decided shape of this repo and its kit, before any topic is researched.
 _Avoid_: Spec, design
+
+**Tactical**:
+Code-level practice: how code is written, structured and checked. The level AI is good at, so increasingly delegated to it. A way of thinking, not a tag or folder.
+_Avoid_: Low-level, implementation
+
+**Strategic**:
+Architecture, planning, process and the roles of humans and agents. The level humans increasingly focus on. A way of thinking, not a tag or folder.
+_Avoid_: High-level, management
