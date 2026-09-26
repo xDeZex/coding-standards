@@ -19,6 +19,7 @@ ENTRY_FIELD = re.compile(r"^- \*\*(.+?):\*\* (.+)$")
 REQUIRED_FIELDS = {"Rationale", "Applies when", "Position"}
 CONTROL_FIELD = ENTRY_FIELD
 CONTROL_FIELDS = {"What it is", "Use when"}
+SKILL_FIELDS = {"Where", "Why", "Use when"}
 
 
 def rel(root, path):
@@ -197,6 +198,33 @@ def check_controls(root, errors):
         check_links(root, path, errors)
 
 
+def check_skills(root, errors):
+    path = root / "kit" / "skills" / "skills.md"
+    if not path.is_file():
+        return
+    name = rel(root, path)
+    text = path.read_text()
+    if not re.match(r"# .+", text):
+        errors.append(f"{name}: must start with an '# <title>'")
+    seen = set()
+    for block in re.split(r"(?m)^## ", strip_code(text))[1:]:
+        skill = block.split("\n", 1)[0].strip()
+        if not SLUG.match(skill):
+            errors.append(f"{name}: skill id '{skill}' must be a lowercase-hyphen slug")
+        if skill in seen:
+            errors.append(f"{name}: duplicate skill id '{skill}'")
+        seen.add(skill)
+        fields = {}
+        for l in block.split("\n")[1:]:
+            if m := ENTRY_FIELD.match(l):
+                fields[m.group(1)] = m.group(2)
+        for missing in sorted(SKILL_FIELDS - fields.keys()):
+            errors.append(f"{name}: {skill}: missing '**{missing}:**' line")
+        if "Where" in fields and not LINK.search(fields["Where"]):
+            errors.append(f"{name}: {skill}: 'Where' must be a Markdown link")
+    check_links(root, path, errors)
+
+
 def check_guide(root, errors):
     for path in sorted((root / "guide").glob("*.md")) if (root / "guide").is_dir() else []:
         if path.name != "CLAUDE.md":
@@ -208,6 +236,7 @@ def validate(root):
     check_research(root, errors, warnings)
     check_catalogue(root, errors)
     check_controls(root, errors)
+    check_skills(root, errors)
     check_guide(root, errors)
     return errors, warnings
 
