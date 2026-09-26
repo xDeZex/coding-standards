@@ -15,3 +15,7 @@ Ask one question at a time, never a batch. This overrides the grilling skill's "
 ## Git workflow
 
 Always commit and push after making changes.
+
+## Folder instructions
+
+Each folder has instructions of its own (a `README.md`, imported by a `CLAUDE.md`). Read them before working in a folder. They can change or move, so they are not listed here.

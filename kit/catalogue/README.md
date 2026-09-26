@@ -1,28 +1,27 @@
 # Catalogue
 
-One YAML file per topic: `kit/catalogue/<topic>.yaml`, a list of catalogue entries. The filename is the topic, matching `research/<topic>/`.
+One Markdown file per topic: `kit/catalogue/<topic>.md`, holding that topic's catalogue entries. The filename is the topic, matching `research/<topic>/`. Markdown, so links are clickable on GitHub and each entry can be linked to by its heading.
 
-## Entry fields
+## Entry format
 
-| Field | Meaning |
-| --- | --- |
-| `id` | Descriptive slug, unique within the topic file, never renamed. Referenced elsewhere as `<topic>/<id>`. |
-| `statement` | The instruction. |
-| `rationale` | Why. |
-| `applies_when` | Loose free text the AI judges against a target repo, such as "when there are tests" or "when doing UI". Absent means always. |
-| `position` | Repo-relative path to the position the entry comes from, with an optional `#anchor`. Search for the path to find the entries a changed position affects. |
+```markdown
+# Testing
 
-Sources are not on the entry. They are reached through the position to its source notes, which carry the source, source date and researched date.
+## run-tests-before-commit
 
-To retire an entry, delete it. Git history keeps it.
+Run the test suite before every commit.
 
-## Example (format only, not a real standard)
-
-```yaml
-# kit/catalogue/testing.yaml
-- id: run-tests-before-commit
-  statement: Run the test suite before every commit.
-  rationale: Catches regressions while the change is still small.
-  applies_when: when there are tests
-  position: research/testing/position.md#tests-first
+- **Rationale:** Catches regressions while the change is still small.
+- **Applies when:** when there are tests
+- **Position:** [Tests first](../../research/testing/position.md#tests-first)
 ```
+
+- The `##` heading is the id: a descriptive lowercase-hyphen slug, unique within the file, never renamed. Elsewhere it is referenced as `<topic>/<id>`.
+- The paragraph under the heading is the statement: the instruction.
+- All three lines are required. `Applies when` is loose free text the AI judges against a target repo ("when there are tests", "when doing UI"); an entry that always applies says "always".
+- `Position` is a relative Markdown link to the position the entry comes from, with an optional `#anchor` naming the heading. Search for the path to find the entries a changed position affects.
+- Entries carry no sources. Sources are reached through the position to its source notes.
+- Entries are neutral about where they are used. Each countermeasure words and applies an entry in its own way.
+- To retire an entry, delete it. Git history keeps it.
+
+Run the validator after editing (see `research/README.md` for setup): `.venv/bin/python scripts/validate.py`.
