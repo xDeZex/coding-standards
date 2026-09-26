@@ -48,7 +48,7 @@ A script the agent harness runs at a fixed point in the agent's flow, such as be
 _Avoid_: Hook (ambiguous with git hook)
 
 **Git hook**:
-A script git runs at a git event, such as before a commit. Works the same for an agent and a human, but only sees git operations.
+A script git runs at a git event, such as before a commit. Not tied to any agent, but only sees git operations, and only runs when the commit or push goes through git in a way that triggers it.
 _Avoid_: Hook (ambiguous with agent hook)
 
 **Control handbook**:

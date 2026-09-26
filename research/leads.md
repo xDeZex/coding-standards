@@ -340,3 +340,53 @@ Add a lead as one block with exactly these four fields. Search the repo by name 
 - kind: other
 - link: https://cursor.com/docs/agent/hooks
 - why: Cursor loads hooks from tools like Claude Code; the compatibility page was not opened, so which fields carry over is unknown
+
+## Config-based git hooks (git hook)
+- kind: idea
+- link: https://git-scm.com/docs/git-hook
+- why: Hooks defined in git config and shared across repos; changes how "not shared by clone" works; the git version that added them and how widely it is deployed were not checked
+
+## git-receive-pack quarantine and push rules
+- kind: idea
+- link: https://git-scm.com/docs/git-receive-pack
+- why: The server-side gate an agent cannot skip locally; only the quarantine section was read
+
+## GitHub rulesets and push rules
+- kind: other
+- link: https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets
+- why: The github.com equivalent of server-side enforcement, with bypass lists; only branch protection was read
+
+## pre-commit.ci
+- kind: company
+- link: https://pre-commit.ci
+- why: Hosted CI backstop for pre-commit hooks; not read
+
+## lint-staged
+- kind: other
+- link: https://github.com/lint-staged/lint-staged
+- why: Runs checks on staged files only; not read
+
+## Claude Code worktree hooksPath issue cluster
+- kind: other
+- link: https://github.com/anthropics/claude-code/issues/27474
+- why: Agent worktrees rewrite core.hooksPath so hooks silently do not run; related issues 72714, 85039, 67196, 67914 and 90456 were not read
+
+## Aider lint and test docs
+- kind: other
+- link: https://aider.chat/docs/usage/lint-test.html
+- why: The maintainer's answer to skipped pre-commit is --test-cmd pre-commit; page not read; there is an open request for an Aider hook system (issue 5712)
+
+## Claude Code PreCommit hook request
+- kind: other
+- link: https://github.com/anthropics/claude-code/issues/4834
+- why: Cited by issue 90887 as an earlier request for a commit gate; not read
+
+## Codex issue 5034 (git-shadow-dir workaround)
+- kind: other
+- link: https://github.com/openai/codex/issues/5034
+- why: Seen only as a link in a comment on the sandbox-blocks-commit issue
+
+## Copilot coding agent and Cursor commit behaviour
+- kind: other
+- link: https://docs.github.com/en/copilot/concepts/coding-agent/about-copilot-coding-agent
+- why: The pages read showed no git-hook statement; another source is needed on whether these agents run git hooks on their commits
