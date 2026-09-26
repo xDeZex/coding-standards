@@ -9,11 +9,11 @@ The portable set of artifacts this repo produces for use in other repos.
 _Avoid_: Toolkit, package, bundle
 
 **Catalogue**:
-The source-of-truth collection of candidate instructions, each with its rationale, sources and the conditions under which it applies.
+The source-of-truth collection of candidate instructions, each with its rationale and the conditions under which it applies, and each traceable to its sources through the position it comes from.
 _Avoid_: Library, rulebook, database
 
 **Catalogue entry**:
-One candidate instruction in the catalogue.
+One candidate instruction in the catalogue, coming from a position.
 _Avoid_: Rule, item, standard
 
 **Review standards**:
