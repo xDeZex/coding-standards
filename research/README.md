@@ -1,0 +1,36 @@
+# Research
+
+Working material, not carried into target repos. It exists for human and AI understanding, and as the basis for producing catalogue entries. Catalogue entries are what get copied into a repo during adoption.
+
+```
+research/<topic>/position.md
+research/<topic>/sources/<source>.md
+```
+
+## Source note
+
+One file per source. The filename is a descriptive slug id and is never renamed. YAML front matter, then a free Markdown body recording what the source says, kept separate from our opinion.
+
+```markdown
+---
+source: https://example.com/article
+source_date: 2024-05
+researched: 2026-09-26
+---
+
+# Title of the source
+
+- What the source says...
+```
+
+`source_date` may be `undated` when a source carries no date.
+
+## Position
+
+Exactly one per topic. Free prose: our conclusion, its trade-offs, when it does not hold. No front matter and no required sections. It rests by default on the source notes in the same topic folder; a specific claim that comes from one source links to that source note in the prose. Source links are not machine checked.
+
+Give each conclusion that yields a catalogue entry its own heading, so the entry's `position` pointer can anchor to it.
+
+## Position versus catalogue entry
+
+Nuance stays in the position. What an AI would act on goes in a catalogue entry (`kit/catalogue/<topic>.yaml`), which points back to the position. See `kit/catalogue/README.md`.
