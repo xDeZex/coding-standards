@@ -305,3 +305,38 @@ Add a lead as one block with exactly these four fields. Search the repo by name 
 - kind: idea
 - link: https://arxiv.org/abs/2307.03172
 - why: Standard measurement of position effects in long context; not fetched
+
+## Claude Code hook non-firing issues
+- kind: other
+- link: https://github.com/anthropics/claude-code/issues/36071
+- why: A cluster of reports that PreToolUse hooks are skipped in some contexts (#36071 allowedTools "*", #35557 EnterWorktree, #34240 background agents, #52822 JSON allow, #20063 and #30143 headless mode); only #88738, #92675, #34692, #33343 were read
+
+## Cline hooks
+- kind: other
+- link: https://docs.cline.bot/customization/hooks
+- why: Another coding agent with hooks; the docs page is a JavaScript shell and returned no body to a plain fetch, so it was not read
+
+## Kiro hook triggers and best practices
+- kind: other
+- link: https://kiro.dev/docs/hooks/
+- why: The Hook Triggers, Hook Actions, Best Practices and Troubleshooting subpages (including agent-prompt actions that behave as instructions) were not opened
+
+## Claude Code security-guidance plugin
+- kind: other
+- link: https://code.claude.com/docs/en/hooks-guide
+- why: The guide points to it as a production example of hooks that run a separate model review and feed findings back; a model-judged hook use not read here
+
+## Hooks for security and platform teams (Cursor)
+- kind: other
+- link: https://cursor.com/docs/agent/hooks
+- why: The page cites a Cursor blog post on hooks for security and governance with partners (Snyk, Semgrep, Endor Labs, 1Password); the post and any measurements were not read
+
+## Agentic coding is straining CI (Anthropic)
+- kind: other
+- link: https://claude.com/blog/steering-claude-code-skills-hooks-rules-subagents-and-more
+- why: Sibling Anthropic post (2026-09-14) on scaling test impact analysis for agent-driven CI, listed in that page's related posts; relevant to CI as the control next to hooks; not opened
+
+## Cursor third-party hooks compatibility
+- kind: other
+- link: https://cursor.com/docs/agent/hooks
+- why: Cursor loads hooks from tools like Claude Code; the compatibility page was not opened, so which fields carry over is unknown
