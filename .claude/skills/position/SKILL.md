@@ -16,7 +16,7 @@ Read the conclusion and its source notes yourself, then ask for the user's own o
 
 ## 3. Grill
 
-Call the Skill tool twice, for `grilling` and `domain-modeling`; `grill-with-docs` cannot be called by you. Grill their opinion against the conclusion and source notes: where it agrees, disagrees or goes beyond them, what is unverified, and how it applies to AI coding, tactical and strategic. Done when every branch of their opinion has been visited and they confirm shared understanding.
+Call the Skill tool twice, for `grilling` and `domain-modeling`; `grill-with-docs` cannot be called by you. The aim is to find out their position, not to audit their examples. Use the conclusion and source notes to probe their general stance: where it agrees, disagrees or goes beyond them, what is unverified, and how it applies to AI coding, tactical and strategic. Treat their examples as evidence for the stance; ask about an example only when the answer could change the stance. Done when every branch of their stance has been visited and they confirm shared understanding.
 
 ## 4. Write the position
 
