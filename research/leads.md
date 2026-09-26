@@ -28,8 +28,8 @@ Add a lead as one block with exactly these four fields. Search the repo by name 
 
 ## Magnus Gille
 - kind: person
-- link: https://gille.ai
-- why: Named as worth a look on agents and tests; the research could not confirm this is the intended person or find writing on the topic
+- link: https://github.com/Magnus-Gille
+- why: Named as worth a look on agents and tests; the research found this account (repos on Claude Code energy monitoring and AI memory) but no writing on tests, and did not read the repos
 
 ## Martin Fowler
 - kind: person
