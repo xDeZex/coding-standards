@@ -6,9 +6,9 @@ researched: 2026-09-26
 
 # Agent READMEs: An Empirical Study of Context Files for Agentic Coding
 
-Preprint, arXiv 2511.12884, November 2025. Only the abstract page was read (via a summarising fetch tool). Descriptive, not an effectiveness study.
+Re-read 2026-09-26: full paper PDF (arxiv.org/pdf/2511.12884, v2 dated 9 Aug 2026, pdftotext), not the abstract page. First version November 2025. Descriptive, not an effectiveness study.
 
-- 2,303 context files from 1,925 repositories were analysed for content.
-- Test procedures appeared in 75.9% of files, implementation details 70.8%, architecture 68.1%. Security specifications appeared in 14.8% and performance in 14.5%.
-- Files behave like living configuration code, changed in frequent small increments.
-- Relevance: shows that running-tests instructions are the most common content of real AGENTS.md style files, so putting them in a skill would depart from prevailing practice. It says nothing about whether that practice works better or worse.
+- 2,303 context files from 1,925 repositories: 922 Claude Code files (CLAUDE.md), 694 Codex files (AGENTS.md) and 687 GitHub Copilot files (copilot-instructions.md), from repositories with at least 5 stars.
+- Testing instructions appeared in 75.9% of files (the paper's own text: "the most prevalent category", "procedures and commands for executing automated tests"), implementation details 70.8%, architecture 68.1%; performance 14.5% and security 14.8%. The classification into 16 instruction types was done by an automatic classifier (reported F1 0.79 for concrete topics such as Testing and Architecture), so the percentages carry classifier error.
+- Files behave like configuration code, changed in frequent small increments; the paper also finds them hard to read.
+- Relevance: running-tests instructions are the most common content of real context files. It says nothing about whether that practice works better or worse than other placements.

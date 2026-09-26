@@ -6,9 +6,10 @@ researched: 2026-09-26
 
 # Xiang et al.: Cross-Model LLM Code Review (Claude and Codex)
 
-Preprint, accepted to the Agentic SE workshop at KDD'26 (per the abstract page). Read through a summarising fetch tool (abstract page only, not the PDF). Weak evidence for our question: small task set, two model families, and it measures task pass rate, not test tampering.
+Preprint (arXiv v1, 22 Jul 2026), Agentic SE workshop at KDD '26. How it was read this time: PDF from arxiv.org via pdftotext, read for abstract, method, results, discussion and limitations. The earlier note (abstract page via a summarising tool) said there was no same-model arm; that was wrong.
 
-- Setup: Claude and Codex paired as drafter and reviewer on 116 challenging coding tasks; reviewers could read code but not execute tests.
-- Result: Claude reviewing Codex drafts raised the pass rate from 71.6% to 89.7% (reported significant); Codex reviewing Claude drafts lowered it from 91.4% to 82.8%. Authors conclude the useful pairing is asymmetric.
-- Relevance: shows review by a second model can hurt as well as help, and that results depend on the pairing. It does not isolate same-model versus cross-model review as a controlled contrast of self-preference; the summary gives no same-model arm.
-- Unverified: exact protocol, what "pass rate" means, number of runs, and whether reviewers saw test files.
+- Setup: 116 hard and medium LiveCodeBench problems (released after 2025), Claude Opus 4.7 and Codex GPT-5.5, six conditions: both solo baselines, both cross-model orderings, both same-model orderings. The reviewer sees the problem and the draft, cannot execute tests, cannot see hidden tests, and returns a final program. Single review pass, high reasoning effort.
+- Results (pass rate): Codex solo 71.6%; reviewed by Claude 89.7% (BH-adjusted p = .001); reviewed by Codex itself 84.5% (p = .022). Claude solo 91.4%; reviewed by Claude itself 91.4% (unchanged; 3 fixes, 3 regressions); reviewed by Codex 82.8% (p = .046; 3 fixes, 13 regressions).
+- The direct contrast between the two cross-model orderings does not survive multiple-comparison correction (p_BH = .1444). Claude solo was on the accuracy Pareto frontier; no reviewed condition beat it.
+- Authors' limits: single model pair, self-contained competitive programming problems rather than repository patches, static review without execution, sensitivity to prompt wording, models change quickly.
+- Relevance: a second model as reviewer helped one draft source and hurt the other; same-model review helped the weaker writer (Codex) and did nothing for the stronger (Claude). The task is generating a corrected program, not judging test changes; the paper does not study tests being weakened and says reviewers could not see the hidden tests and does not describe any test files in the review input.
