@@ -52,7 +52,7 @@ Use relative Markdown links between files, so they work when clicked on GitHub.
 
 ## Before you finish
 
-Run the validator and fix every error until it exits 0. It checks source note front matter, the topic layout, the catalogue and relative links in positions and the guide. Warnings (for example a topic with no position yet) do not fail it.
+Run the validator and fix every error until it exits 0. It checks source note front matter, the topic layout, the leads, the catalogue and relative links in positions and the guide. Warnings (for example a topic with no position yet) do not fail it.
 
 ```
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt   # once

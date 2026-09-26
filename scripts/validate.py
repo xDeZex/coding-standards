@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate research files, the catalogue and links.
+"""Validate research files, leads, the catalogue and links.
 
 Run from anywhere: .venv/bin/python scripts/validate.py
 Exits 1 with one line per error when something is wrong, 0 otherwise.
@@ -20,6 +20,9 @@ REQUIRED_FIELDS = {"Rationale", "Applies when", "Position"}
 CONTROL_FIELD = ENTRY_FIELD
 CONTROL_FIELDS = {"What it is", "Use when"}
 SKILL_FIELDS = {"Where", "Why", "Use when"}
+LEAD_FIELD = re.compile(r"^- (\w+): (.*)$")
+LEAD_FIELDS = ("kind", "link", "why")
+LEAD_KINDS = {"person", "company", "idea", "book", "talk", "other"}
 
 
 def rel(root, path):
@@ -225,6 +228,39 @@ def check_skills(root, errors):
     check_links(root, path, errors)
 
 
+def check_leads(root, errors):
+    path = root / "research" / "leads.md"
+    if not path.is_file():
+        return
+    name = rel(root, path)
+    text = re.sub(r"^```.*?^```", "", path.read_text(), flags=re.S | re.M)
+    seen = set()
+    for block in re.split(r"^## +", text, flags=re.M)[1:]:
+        title, _, body = block.partition("\n")
+        title = title.strip()
+        if title in seen:
+            errors.append(f"{name}: duplicate lead '{title}'")
+        seen.add(title)
+        fields = {}
+        for line in body.splitlines():
+            if not line.strip():
+                continue
+            m = LEAD_FIELD.match(line)
+            if not m or m.group(1) not in LEAD_FIELDS:
+                errors.append(f"{name}: lead '{title}': expected '- kind|link|why: value', got '{line}'")
+            elif m.group(1) in fields:
+                errors.append(f"{name}: lead '{title}': duplicate field '{m.group(1)}'")
+            else:
+                fields[m.group(1)] = m.group(2).strip()
+        for key in LEAD_FIELDS:
+            if not fields.get(key):
+                errors.append(f"{name}: lead '{title}': missing or empty '{key}'")
+        if fields.get("kind") and fields["kind"] not in LEAD_KINDS:
+            errors.append(f"{name}: lead '{title}': kind '{fields['kind']}' is not one of {sorted(LEAD_KINDS)}")
+        if fields.get("link") and not re.match(r"^https?://\S+$", fields["link"]):
+            errors.append(f"{name}: lead '{title}': link must be an http(s) URL")
+
+
 def check_guide(root, errors):
     for path in sorted((root / "guide").glob("*.md")) if (root / "guide").is_dir() else []:
         if path.name != "CLAUDE.md":
@@ -234,6 +270,7 @@ def check_guide(root, errors):
 def validate(root):
     errors, warnings = [], []
     check_research(root, errors, warnings)
+    check_leads(root, errors)
     check_catalogue(root, errors)
     check_controls(root, errors)
     check_skills(root, errors)

@@ -108,6 +108,27 @@ class ValidateTest(unittest.TestCase):
         errors, _ = self.errors(**{"kit/controls/hook.md": CONTROL.replace("- **Use when:** the error is mechanical.\n", "")})
         self.assertTrue(any("hook.md" in e and "Use when" in e for e in errors))
 
+    def test_leads_pass(self):
+        lead = "# Leads\n\n## Ada\n- kind: person\n- link: https://example.com\n- why: worth a look\n"
+        self.assertEqual(self.errors(**{"research/leads.md": lead})[0], [])
+
+    def test_leads_format_example_in_code_is_ignored(self):
+        lead = "```markdown\n## Name\n- kind: x\n```\n"
+        self.assertEqual(self.errors(**{"research/leads.md": lead})[0], [])
+
+    def test_lead_missing_field_bad_kind_and_link(self):
+        lead = "## Ada\n- kind: robot\n- link: example.com\n"
+        errs = self.errors(**{"research/leads.md": lead})[0]
+        self.assertTrue(any("missing or empty 'why'" in e for e in errs))
+        self.assertTrue(any("kind 'robot'" in e for e in errs))
+        self.assertTrue(any("http(s) URL" in e for e in errs))
+
+    def test_lead_duplicate_and_stray_line(self):
+        block = "## Ada\n- kind: person\n- link: https://a.com\n- why: x\n"
+        errs = self.errors(**{"research/leads.md": block + block + "notes\n"})[0]
+        self.assertTrue(any("duplicate lead" in e for e in errs))
+        self.assertTrue(any("got 'notes'" in e for e in errs))
+
 
 if __name__ == "__main__":
     unittest.main()
