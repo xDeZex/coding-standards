@@ -10,7 +10,9 @@ research/<topic>/sources/<source>.md
 
 ## Purpose
 
-Research is done to create something for the kit: a catalogue entry, a control handbook, a Skills list entry or the human guide. Before starting, name what the research will feed and phrase the question so its answer is usable there. A vague topic gives findings nobody can act on. The goal shapes the question and the choice of sources; the conclusion still reports findings only (see Conclusion below). A topic can be researched again with a better-phrased question.
+Research is done to create something for the kit: a catalogue entry, a control handbook, a Skills list entry or the human guide. Before starting, name what the research will feed and phrase the question so its answer is usable there. A vague topic gives findings nobody can act on. The goal shapes the question and the choice of sources; the conclusion still reports what the sources say and adds no recommendation of our own (see Conclusion below). A topic can be researched again with a better-phrased question.
+
+The main question is what people do with AI coding, whether they like it, and what they recommend. AI coding changes fast and has little measured data, and this repo is building the canon for it now, the way TDD is Kent Beck's opinion. So the opinion of a trusted expert counts for a lot: it is a primary source for what the canon says, and evidence checks it rather than replacing it. The researcher decides who is trusted: someone who authored a widely used practice, tool or standard, or who has published sustained first-hand accounts of running agents on real work. Say why in the source note and add the person to the leads. The human does not confirm the list.
 
 A good question covers the whole subject, not one use of it; asks what it is good and bad at; and asks what someone should weigh when deciding whether to use it. "How does X work" produces documentation, not something the kit can use.
 
@@ -45,11 +47,18 @@ A source note records what the page says, so the agent must have read the page i
 
 ## Conclusion
 
-Exactly one per topic, free prose, no front matter. Findings only: what the sources say, how well they support it, what is unverified. No kit design, no catalogue entries, no recommendations for us.
+Exactly one per topic, free prose, no front matter. It reports what the sources say, how well they support it and what is unverified. No kit design, no catalogue entries and no recommendations of our own; what experts recommend is a finding and belongs here.
+
+Two named parts, in this order:
+
+- **What practitioners and experts do and recommend.** Attributed opinion and practice: what people do, whether they like it, what they recommend. Show where experts disagree. Give each person a one-line description at first mention, such as "Matt Pocock (TypeScript educator, author of a widely used set of agent skills)", so a reader who does not know them sees who they are. Where an expert claims something and no evidence was found, say so.
+- **What the evidence shows.** Measurements, vendor docs, mechanics and reports of incidents, with how well each supports its claim.
+
+Keep the two apart, so evidence is not read as confirming an opinion or the reverse.
 
 ## Source note
 
-One file per source. The filename is a descriptive slug id and is never renamed. YAML front matter, then a free Markdown body recording what the source says, kept separate from our opinion.
+One file per source. The filename is a descriptive slug id and is never renamed. YAML front matter, then a free Markdown body recording what the source says, kept separate from our opinion. For an opinion source, say who the speaker is and why they count as trusted.
 
 ```markdown
 ---
