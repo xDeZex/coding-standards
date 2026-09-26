@@ -20,6 +20,10 @@ Ask one question at a time, never a batch. This overrides the grilling skill's "
 
 Always commit and push after making changes.
 
+## Online research
+
+Search results are pointers, not sources. Open the pages behind them (WebFetch) and read them; cite what the page says, not the snippet.
+
 ## Folder instructions
 
 Each folder has instructions of its own (a `README.md`, imported by a `CLAUDE.md`). Read them before working in a folder. They can change or move, so they are not listed here.
