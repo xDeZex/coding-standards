@@ -16,6 +16,10 @@ _Avoid_: Library, rulebook, database
 One candidate instruction in the catalogue, coming from a position.
 _Avoid_: Rule, item, standard
 
+**Countermeasure**:
+A way of making a catalogue entry take effect in a repo, such as an AGENTS.md line, a skill, an agent hook or a deterministic tool. The term comes from lean.
+_Avoid_: Control, enforcement
+
 **Review standards**:
 The subset of standards an AI checks code against when reviewing.
 _Avoid_: Lint rules, checklist
