@@ -48,7 +48,7 @@ Give each conclusion that yields a catalogue entry its own heading, so the entry
 
 ## Position versus catalogue entry
 
-Nuance stays in the position. What an AI would act on goes in a catalogue entry (`kit/catalogue/<topic>.yaml`), which points back to the position. See `kit/catalogue/README.md`.
+Nuance stays in the position. What an AI would act on goes in a catalogue entry (`kit/catalogue/<topic>.md`), which points back to the position. See `kit/catalogue/README.md`.
 
 Use relative Markdown links between files, so they work when clicked on GitHub.
 
