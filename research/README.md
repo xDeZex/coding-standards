@@ -10,7 +10,7 @@ research/<topic>/sources/<source>.md
 
 ## Who writes what
 
-A research agent writes source notes and one `conclusion.md`, never the position. The conclusion is its synthesis of the sources, with unverified claims flagged, for the human to read and discuss (including how it connects to AI coding). The position is the human's, written after that discussion, and it is the only file catalogue entries point to. The conclusion may be deleted once the position exists.
+A research agent writes source notes and one `conclusion.md`, never the position. The conclusion is its synthesis of the sources, with unverified claims flagged, for the human to read and discuss (including how it connects to AI coding). The position is the human's, written after that discussion, and it is the only file catalogue entries point to. The conclusion is kept after the position exists, as the record of what the research found; never delete it.
 
 ## Conclusion
 

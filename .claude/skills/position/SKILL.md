@@ -19,4 +19,4 @@ Once their opinion is on the table, call the Skill tool for `grilling` and `doma
 
 ## 4. Write the position
 
-When the user confirms shared understanding, write `research/<topic>/position.md` in their voice, per `research/README.md`: free prose, trade-offs and when it does not hold, links to source notes for specific claims, and one heading per conclusion that will yield a catalogue entry. Show it for approval, run the validator until it exits 0, then commit and push. Offer to delete `conclusion.md`; never delete it unasked.
+When the user confirms shared understanding, write `research/<topic>/position.md` in their voice, per `research/README.md`: free prose, trade-offs and when it does not hold, links to source notes for specific claims, and one heading per conclusion that will yield a catalogue entry. Show it for approval, run the validator until it exits 0, then commit and push. Never delete or modify `conclusion.md`; it stays as the record of what the research found.
