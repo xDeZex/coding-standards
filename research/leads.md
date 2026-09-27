@@ -480,3 +480,8 @@ Add a lead as one block with exactly these four fields. Search the repo by name 
 - kind: other
 - link: https://martinfowler.com/articles/sensors-for-coding-agents.html
 - why: Hook passages were read closely, the rest skimmed
+
+## Kent Beck (GitHub)
+- kind: person
+- link: https://github.com/KentBeck
+- why: Pushes code live during his "genie session" recordings, including the tcr-skill repo from the TCR-as-agent-skill session; profile itself not browsed beyond confirming identity (bio "tidyfirst")
